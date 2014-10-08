@@ -1,0 +1,68 @@
+.navbar-inverse {
+	background-color: #410A66;
+}
+.btn-primary {
+	color: #fff;
+	background-color: #8E42CA;
+	border-color: #8E42CA;
+}
+.btn-default {
+	color: #333;
+	background-color: #D2B8F8;
+	border-color: #ccc;
+}
+.jumbotron {
+	padding: 30px;
+	margin-bottom: 30px;
+	color: inherit;
+	background-image: url('/img/seriousOwl.jpg');
+}
+.jumbotron h1, .jumbotron .h1 {
+	color: black;
+}
+.jumbotron p {
+	margin-bottom: 15px;
+	font-size: 21px;
+	font-weight: 200;
+	color: black;
+}
+#a_title {
+	color: #611EF1;
+	text-decoration: none;
+}
+#a_title:hover {
+	color: #BF8BF8;
+	text-decoration: underline;
+}
+a {
+	color: #BF8BF8;
+}
+a:hover {
+	color: #BF8BF8;
+	text-decoration: underline;
+}
+.pagination>.active>span, 
+.pagination>.active>span:hover {
+	z-index: 2;
+	color: #fff;
+	cursor: default;
+	background-color: #BF8BF8;
+	border-color: #BF8BF8;
+}
+.pagination>li>a:hover {
+	color: #BF8BF8;
+	background-color: #eee;
+	border-color: #ddd;
+}
+.pagination>li>a, 
+.pagination>li>span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #611EF1;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}

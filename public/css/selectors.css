@@ -1,0 +1,26 @@
+/*
+selectors
+	element: p, img, h1, body, html, div, input
+	class: class="whatevername"
+	id: id = "someid"
+*/
+
+selector {
+    property1: value;
+    property2: value;
+}
+
+p { 
+
+}
+/*
+group together to make all the same colour
+*/
+.whatevername, #someid, h1, img, div {
+	colour: red;
+}
+
+
+#someid {
+
+}
