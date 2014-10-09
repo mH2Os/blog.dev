@@ -35,6 +35,9 @@ class PostsController extends \BaseController {
 	public function store()
 	{
 
+	    Log::info('User entered a blog.', Input::all());
+
+
 		$validator = Validator::make(Input::all(), Post::$rules);
 
 	    // attempt validation
@@ -51,6 +54,7 @@ class PostsController extends \BaseController {
 			return Redirect::action('PostsController@index');
 
 	    }
+	    
 	}
 	/**
 	 * Display the specified resource.
@@ -60,7 +64,11 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$post = Post::findOrFail($id);
+		try {
+			$post = Post::findOrFail($id);
+		} catch(Exception $e) {
+			App::abort(404);
+		}
 
 		return View::make('posts.show')->with('post', $post);
 	}
@@ -106,8 +114,17 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$post = Post::findOrFail($id);
+		$post = Post::find($id);
+
+		if(!$post) {
+			App::abort(404);
+		}
+
 		$post->delete();
+
+		Log::info('Post deleted successfully');
+		
+		Session::flash('successMessage', 'Post deleted successfully.');
 
 		return Redirect::action('PostsController@index');
 	}
