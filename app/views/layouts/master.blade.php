@@ -21,6 +21,7 @@
 </head>
 <body>
 
+  
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navbar">
       <div class="container">
         <div class="navbar-header">
@@ -51,6 +52,14 @@
         <p><a class="btn btn-primary btn-lg" role="button" href="">Learn more &raquo;</a></p>
       </div>
 </div>
+
+@if (Session::has('successMessage'))
+  <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+@endif
+
+@if (Session::has('errorMessage'))
+    <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+@endif
 
 <div class="container" id="content">
   @yield('content')
