@@ -31,7 +31,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand active" id="start" href="rissawaters.com">Rissa's World</a>
+          <a class="navbar-brand active" id="start" href="http://rissawaters.com/">Rissa's World</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -54,13 +54,9 @@
               <label class="sr-only" for="exampleInputPassword2">Password</label>
               <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
             </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Remember me
-              </label>
-            </div>
             <button type="submit" class="btn btn-default">Sign in</button>
           </form>
+
         </div><!--/.nav-collapse -->
       </div>
     </div>
