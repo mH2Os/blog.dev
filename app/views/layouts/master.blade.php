@@ -43,7 +43,7 @@
    
           </ul>
 
-          <form class="form-inline" role="form">
+          <!-- <form class="form-inline" role="form">
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-addon">@</div>
@@ -55,7 +55,7 @@
               <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-default">Sign in</button>
-          </form>
+          </form> -->
 
         </div><!--/.nav-collapse -->
       </div>
