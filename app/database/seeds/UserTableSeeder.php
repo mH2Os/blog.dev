@@ -8,7 +8,7 @@ class UserTableSeeder extends Seeder
 
         $user = new User();
         $user->email = 'rissa@rissawaters.com';
-        $user->password = Hash::make('p00hb3arr0ck$');
+        $user->password = Hash::make($_ENV['USER_PASS']);
         $user->save();
     }
 
