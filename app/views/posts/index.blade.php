@@ -14,9 +14,16 @@
 	<p>{{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A') }}} </p>
 
 	{{ Form::open(['method' => 'DELETE', 'action' => ['PostsController@destroy', $post->id]])}}
-		<button type="submit" class="btn btn-danger">Delete</button>
+
+	<div class="btn-group">
+	  <button type="submit" class="btn btn-default">Delete</button>
+
 	{{ Form::close() }}	
-	<button type="submit" class="btn btn-info" href="{{{ action('PostsController@edit', $post->id) }}}">Edit</button>
+		<a class="btn btn-default" href="{{{ action('PostsController@edit', $post->id) }}}">Edit</a>
+	  
+	</div>
+
+
 
 	<br>
 	<br>

@@ -10,7 +10,7 @@ class PostsController extends \BaseController {
 	    // run auth filter before all methods on this controller except index and show
 	    $this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
 	}
-	
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -19,7 +19,6 @@ class PostsController extends \BaseController {
 	public function index()
 	{
 		$posts = Post::paginate(4);
-		$post = Post::find(1);
 
 		return View::make('posts.index')->with('posts', $posts);
 	}
@@ -43,27 +42,12 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
+		$post = new Post;
 
 	    Log::info('User entered a blog.', Input::all());
 
+		return $this->validatorSave($post);
 
-		$validator = Validator::make(Input::all(), Post::$rules);
-
-	    // attempt validation
-	    if ($validator->fails()) {
-	        // validation failed, redirect to the post create page with validation errors and old inputs
-	        return Redirect::action('PostsController@create')->withErrors($validator)->withInput();
-	    } else {
-	        // validation succeeded, create and save the post
-			$post = new Post;
-			$post->title = Input::get('title');
-			$post->body  = Input::get('body');
-	    	$post->save();
-
-			return Redirect::action('PostsController@index');
-
-	    }
-	    
 	}
 	/**
 	 * Display the specified resource.
@@ -91,7 +75,11 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$post = Post::findOrFail($id);
+		try {
+			$post = Post::findOrFail($id);
+		} catch(Exception $e) {
+			App::abort(404);
+		}
 
 		return View::make('posts.edit')->with('post', $post);
 	}
@@ -107,11 +95,9 @@ class PostsController extends \BaseController {
 	{
 		$post = Post::findOrFail($id);
 
-		$post->title = Input::get('title');
-		$post->body  = Input::get('body');
-		$post->save();
+		Log::info('User edited a blog.', Input::all());
 
-		return Redirect::action('PostsController@index');
+		return $this->validatorSave($post);
 	}
 
 
@@ -136,6 +122,35 @@ class PostsController extends \BaseController {
 		Session::flash('successMessage', 'Post deleted successfully.');
 
 		return Redirect::action('PostsController@index');
+	}
+
+	/**
+	*
+	* Way to refactor update and store to use the same validator and save options
+	*
+	**/
+	public function validatorSave(Post $post) {
+
+		$message = "Your post was successfully saved.";
+
+		$validator = Validator::make(Input::all(), Post::$rules);
+
+		// attempt validation
+	    if ($validator->fails()) {
+	        // validation failed, redirect to the post create page with validation errors and old inputs
+	        return Redirect::action('PostsController@create')->withErrors($validator)->withInput();
+	    } else {
+	        // validation succeeded, create and save the post
+			$post->title = Input::get('title');
+			$post->body  = Input::get('body');
+	    	$post->save();
+
+			Session::flash('successMessage', $message);
+
+			return Redirect::action('PostsController@index');
+
+	    }
+
 	}
 
 
