@@ -65,7 +65,7 @@
       <div class="container">
         <h1>Rissa's World!</h1>
         <p id="content0">This is my first blog, yay!</p>
-        <p><a class="btn btn-primary btn-lg" role="button" href="">Learn more &raquo;</a></p>
+<!--         <p><a class="btn btn-primary btn-lg" role="button" href="">Learn more &raquo;</a></p> -->
       </div>
 </div>
 
