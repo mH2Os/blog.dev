@@ -29,3 +29,9 @@ Route::get('/resume', 'HomeController@showResume');
 Route::get('/portfolio', 'HomeController@showPortfolio');
 
 Route::resource('posts', 'PostsController');
+
+Route::get('/', function()
+{
+    return View::make('hello');
+})->before('auth.basic');
+
