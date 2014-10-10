@@ -31,11 +31,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand active" id="start" href="{{{ action('PostsController@index') }}}">Rissa's World</a>
+          <a class="navbar-brand active" id="start" href="rissawaters.com">Rissa's World</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
 
+            <li><a id="home" href="{{{ action('PostsController@index') }}}">Home</a></li>
             <li><a id="blog" href="{{{ action('PostsController@create') }}}">Blog</a></li>
             <li><a id="resume" href="{{{ action('HomeController@showResume') }}}">Resume</a></li>
             <li><a id="portfolio" href="{{{ action('HomeController@showPortfolio') }}}">Portfoilo</a></li>
