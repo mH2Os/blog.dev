@@ -12,6 +12,7 @@
 	{{ Form::text('title') }}
 	<br>
 
+
 	{{ Form::label('body', 'Body: ') }}
 	<br>
 	{{ Form::textarea('body') }}
