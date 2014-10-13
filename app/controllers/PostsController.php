@@ -141,6 +141,7 @@ class PostsController extends \BaseController {
 	        return Redirect::action('PostsController@create')->withErrors($validator)->withInput();
 	    } else {
 	        // validation succeeded, create and save the post
+	        $post->user_id = Auth::user()->id;
 			$post->title = Input::get('title');
 			$post->body  = Input::get('body');
 	    	$post->save();

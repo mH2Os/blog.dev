@@ -31,16 +31,32 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand active" id="start" href="{{{ action('PostsController@index') }}}">Rissa's World</a>
+          <a class="navbar-brand active" id="start" href="http://rissawaters.com/">Rissa's World</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
 
+            <li><a id="home" href="{{{ action('PostsController@index') }}}">Home</a></li>
             <li><a id="blog" href="{{{ action('PostsController@create') }}}">Blog</a></li>
             <li><a id="resume" href="{{{ action('HomeController@showResume') }}}">Resume</a></li>
             <li><a id="portfolio" href="{{{ action('HomeController@showPortfolio') }}}">Portfoilo</a></li>
    
           </ul>
+
+          <!-- <form class="form-inline" role="form">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon">@</div>
+                <input class="form-control" type="email" placeholder="Enter email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputPassword2">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Sign in</button>
+          </form> -->
+
         </div><!--/.nav-collapse -->
       </div>
     </div>
@@ -49,7 +65,7 @@
       <div class="container">
         <h1>Rissa's World!</h1>
         <p id="content0">This is my first blog, yay!</p>
-        <p><a class="btn btn-primary btn-lg" role="button" href="">Learn more &raquo;</a></p>
+<!--         <p><a class="btn btn-primary btn-lg" role="button" href="">Learn more &raquo;</a></p> -->
       </div>
 </div>
 
