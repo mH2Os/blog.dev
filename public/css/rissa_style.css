@@ -12,10 +12,10 @@
 	border-color: #ccc;
 }
 .jumbotron {
-	padding: 30px;
-	margin-bottom: 30px;
+	padding: 100px 50px;
+	margin-bottom: 50px;
 	color: inherit;
-	background-image: url('/img/seriousOwl.jpg');
+	background-image: url('/img/FancyfbBG.jpg');
 }
 .jumbotron h1, .jumbotron .h1 {
 	color: black;
